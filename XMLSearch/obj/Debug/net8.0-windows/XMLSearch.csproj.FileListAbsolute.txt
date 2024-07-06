@@ -1,0 +1,17 @@
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\bin\Debug\net8.0-windows\XMLSearch.exe
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\bin\Debug\net8.0-windows\XMLSearch.deps.json
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\bin\Debug\net8.0-windows\XMLSearch.runtimeconfig.json
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\bin\Debug\net8.0-windows\XMLSearch.dll
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\bin\Debug\net8.0-windows\XMLSearch.pdb
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\obj\Debug\net8.0-windows\XMLSearch.Form1.resources
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\obj\Debug\net8.0-windows\XMLSearch.Views.XMLView.resources
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\obj\Debug\net8.0-windows\XMLSearch.csproj.GenerateResource.cache
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\obj\Debug\net8.0-windows\XMLSearch.GeneratedMSBuildEditorConfig.editorconfig
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\obj\Debug\net8.0-windows\XMLSearch.AssemblyInfoInputs.cache
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\obj\Debug\net8.0-windows\XMLSearch.AssemblyInfo.cs
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\obj\Debug\net8.0-windows\XMLSearch.csproj.CoreCompileInputs.cache
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\obj\Debug\net8.0-windows\XMLSearch.dll
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\obj\Debug\net8.0-windows\refint\XMLSearch.dll
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\obj\Debug\net8.0-windows\XMLSearch.pdb
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\obj\Debug\net8.0-windows\XMLSearch.genruntimeconfig.cache
+C:\Meus Arquivos\Visual Studio\XMLSearch\XMLSearch\obj\Debug\net8.0-windows\ref\XMLSearch.dll
