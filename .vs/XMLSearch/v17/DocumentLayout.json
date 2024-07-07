@@ -1,0 +1,103 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Meus Arquivos\\Visual Studio\\XMLNFCeInfo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CB0099-9E3A-4E44-AC3C-655F497A3B3E}|XMLSearch\\XMLSearch.csproj|c:\\meus arquivos\\visual studio\\xmlnfceinfo\\xmlsearch\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CB0099-9E3A-4E44-AC3C-655F497A3B3E}|XMLSearch\\XMLSearch.csproj|solutionrelative:xmlsearch\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CB0099-9E3A-4E44-AC3C-655F497A3B3E}|XMLSearch\\XMLSearch.csproj|c:\\meus arquivos\\visual studio\\xmlnfceinfo\\xmlsearch\\models\\xmlnfce.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CB0099-9E3A-4E44-AC3C-655F497A3B3E}|XMLSearch\\XMLSearch.csproj|solutionrelative:xmlsearch\\models\\xmlnfce.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CB0099-9E3A-4E44-AC3C-655F497A3B3E}|XMLSearch\\XMLSearch.csproj|c:\\meus arquivos\\visual studio\\xmlnfceinfo\\xmlsearch\\views\\xmlview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3CB0099-9E3A-4E44-AC3C-655F497A3B3E}|XMLSearch\\XMLSearch.csproj|solutionrelative:xmlsearch\\views\\xmlview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CB0099-9E3A-4E44-AC3C-655F497A3B3E}|XMLSearch\\XMLSearch.csproj|c:\\meus arquivos\\visual studio\\xmlnfceinfo\\xmlsearch\\views\\xmlview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F3CB0099-9E3A-4E44-AC3C-655F497A3B3E}|XMLSearch\\XMLSearch.csproj|solutionrelative:xmlsearch\\views\\xmlview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3CB0099-9E3A-4E44-AC3C-655F497A3B3E}|XMLSearch\\XMLSearch.csproj|c:\\meus arquivos\\visual studio\\xmlnfceinfo\\xmlsearch\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F3CB0099-9E3A-4E44-AC3C-655F497A3B3E}|XMLSearch\\XMLSearch.csproj|solutionrelative:xmlsearch\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 302,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "XmlNfce.cs",
+              "DocumentMoniker": "C:\\Meus Arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\Models\\XmlNfce.cs",
+              "RelativeDocumentMoniker": "XMLSearch\\Models\\XmlNfce.cs",
+              "ToolTip": "C:\\Meus Arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\Models\\XmlNfce.cs",
+              "RelativeToolTip": "XMLSearch\\Models\\XmlNfce.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAA7wBwAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T05:42:08.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "XMLView.cs",
+              "DocumentMoniker": "C:\\Meus Arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\Views\\XMLView.cs",
+              "RelativeDocumentMoniker": "XMLSearch\\Views\\XMLView.cs",
+              "ToolTip": "C:\\Meus Arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\Views\\XMLView.cs",
+              "RelativeToolTip": "XMLSearch\\Views\\XMLView.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAiwCwAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T05:36:39.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "XMLView.cs [Projeto]",
+              "DocumentMoniker": "C:\\Meus Arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\Views\\XMLView.cs",
+              "RelativeDocumentMoniker": "XMLSearch\\Views\\XMLView.cs",
+              "ToolTip": "C:\\Meus Arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\Views\\XMLView.cs [Projeto]",
+              "RelativeToolTip": "XMLSearch\\Views\\XMLView.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T05:36:37.271Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Meus Arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\Form1.cs",
+              "RelativeDocumentMoniker": "XMLSearch\\Form1.cs",
+              "ToolTip": "C:\\Meus Arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\Form1.cs",
+              "RelativeToolTip": "XMLSearch\\Form1.cs",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAAAIMAAACBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T02:23:13.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.cs [Projeto]",
+              "DocumentMoniker": "C:\\Meus Arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\Form1.cs",
+              "RelativeDocumentMoniker": "XMLSearch\\Form1.cs",
+              "ToolTip": "C:\\Meus Arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\Form1.cs [Projeto]",
+              "RelativeToolTip": "XMLSearch\\Form1.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T02:07:44.838Z",
+              "EditorCaption": " [Projeto]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

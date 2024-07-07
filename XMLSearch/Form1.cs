@@ -107,7 +107,29 @@ namespace XMLSearch
                 TotalDesconto = double.Parse(xml.Descendants(ns + "total")
                         .Descendants(ns + "ICMSTot")
                         .Elements(ns + "vDesc")
-                        .FirstOrDefault().Value,CultureInfo.InvariantCulture)
+                        .FirstOrDefault().Value,CultureInfo.InvariantCulture),
+                ChaveDeAcesso= xml.Descendants(ns + "infProt")
+                          .Elements(ns + "chNFe")
+                          .FirstOrDefault()?.Value,
+                Motivo = xml.Descendants(ns + "infProt")
+                            .Elements(ns + "xMotivo")
+                            .FirstOrDefault()?.Value,
+                Status = int.Parse(xml.Descendants(ns + "infProt")
+                         .Elements(ns + "cStat")
+                         .FirstOrDefault()?.Value),
+                
+                TotalPag = double.Parse(xml.Descendants(ns + "detPag")
+                         .Elements(ns + "vPag")
+                         .FirstOrDefault()?.Value,CultureInfo.InvariantCulture),
+                
+                TipoPagamento = int.Parse(xml.Descendants(ns + "detPag")
+                         .Elements(ns + "tPag")
+                         .FirstOrDefault()?.Value),
+
+                DataHora = DateTime.Parse(xml.Descendants(ns + "ide")
+                                .Elements(ns + "dhEmi")
+                                .FirstOrDefault()?.Value),
+                //TotalTroco = double.Parse(xml.Descendants(ns + "vTroco").FirstOrDefault()?.Value, CultureInfo.InvariantCulture)
             };
 
             return nfce;

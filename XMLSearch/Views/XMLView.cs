@@ -39,7 +39,13 @@ namespace XMLSearch.Views
             flowLayoutPanel1.Controls.Add(AddControl("Total", xml.Total.ToString()));
             flowLayoutPanel1.Controls.Add(AddControl("Desconto", xml.TotalDesconto.ToString()));
             flowLayoutPanel1.Controls.Add(AddControl("Status", xml.Status.ToString()));
-            
+            flowLayoutPanel1.Controls.Add(AddControl("Chave", xml.ChaveDeAcesso));
+            flowLayoutPanel1.Controls.Add(AddControl("Motivo", xml.Motivo));
+            flowLayoutPanel1.Controls.Add(AddControl("Total Pago", xml.TotalPag.ToString()));
+            flowLayoutPanel1.Controls.Add(AddControl("Troco", xml.TotalTroco.ToString()));
+            flowLayoutPanel1.Controls.Add(AddControl("Tipo de Pagamento", xml.TipoPagamento.ToString()));
+
+
 
         }
     }
