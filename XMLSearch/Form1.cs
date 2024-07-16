@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.IO.Compression;
 using System.Security.Cryptography;
+using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
 using XMLSearch.Models;
@@ -10,49 +11,75 @@ namespace XMLSearch
 {
     public partial class Form1 : Form
     {
+        public List<XmlNfce> NfceList;
         public Form1()
         {
             InitializeComponent();
-            txtNfce.ScrollBars = ScrollBars.Vertical;
-            txtNfce.Multiline = true;
-            txtNfce.WordWrap = true;
             txtSaltos.ScrollBars = ScrollBars.Vertical;
             txtSaltos.Multiline = true;
             txtSaltos.WordWrap = true;
-            flpPanel.VerticalScroll.Visible = true;
-            flpPanel.AutoScroll = true;
             txtSaltos.ReadOnly = true;
+
+            
+
+            
+
+
         }
 
-        private void btnView_Click(object sender, EventArgs e) 
+        private void btnView_Click(object sender, EventArgs e)
         {
 
         }
-        private void btnSelectFiles_Click(object sender, EventArgs e)
+        private async void btnSelectFiles_Click(object sender, EventArgs e)
         {
 
-            var Nfces = GetNFCes();
-            var saltos = SearchSaltos(Nfces);
+            NfceList = await GetNFCes();
+            var saltos = new List<XmlNfce>();
+            saltos = SearchSaltos(NfceList);
+            gridView.SuspendLayout();
+            gridView.Rows.Clear();
 
-            foreach (var nfce in Nfces)
+            gridView.Columns.Add(new DataGridViewButtonColumn() { Name = "Visualizar", UseColumnTextForButtonValue = true, HeaderText = "Visualizar", Text ="Visualizar"});
+            gridView.Columns.Add("XML", "XML");
+            gridView.Columns.Add("Série", "Série");
+            gridView.Columns[0].Width = gridView.Columns[0].Width / 2 + 40;
+            gridView.Columns[2].Width = gridView.Columns[2].Width/2 + 24 ;
+
+
+            gridView.CellClick += (sender, e) =>
             {
-                Button button = new Button() { Text = "Visualizar", AutoSize = true};
-                button.Click += (sender, e) => { XMLView xMLView = new XMLView(nfce); xMLView.Show();};
+                if (e.ColumnIndex == 0)
+                {
+                    XMLView xMLView = new XMLView(NfceList[e.RowIndex]); xMLView.Show();
+                }
+            };
+            int index = 0;
+            foreach (var nfce in NfceList)
+            {
 
-                flpPanel.Controls.Add(new Label() { Text = nfce.ToString() +"\n\n", AutoSize = true });
-                flpPanel.Controls.Add(button);
-                
+                Button button = new Button() { Text = "Visualizar", AutoSize = true };
+                button.Click += (sender, e) => { XMLView xMLView = new XMLView(nfce); xMLView.Show(); };
+                button.Name = "Visualizar";
+
+                gridView.Rows.Add(button, nfce.NumNfce.ToString(), nfce.Serie.ToString());
+
+
+                index++;
+
+
             }
             foreach (var salto in saltos)
             {
                 txtSaltos.Text += salto.ToString();
             }
-            lblQuantXml.Text = Nfces.Count.ToString();
+            lblQuantXml.Text = NfceList.Count.ToString();
             lblQuantSaltos.Text = saltos.Count.ToString();
+            gridView.ResumeLayout();
 
         }
 
-        private List<XmlNfce> GetNFCes()
+        private async Task<List<XmlNfce>> GetNFCes()
         {
             using OpenFileDialog ofd = new OpenFileDialog();
             ofd.Multiselect = false;
@@ -60,12 +87,12 @@ namespace XMLSearch
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 var fileStream = ofd.OpenFile();
-                return UploadXMLs(ofd);
+                return await UploadXMLs(ofd);
             }
             return null;
         }
 
-        private List<XmlNfce> UploadXMLs(OpenFileDialog ofd)
+        private async Task<List<XmlNfce>> UploadXMLs(OpenFileDialog ofd)
         {
             List<XmlNfce> nfces = new List<XmlNfce>();
             using ZipArchive zip = ZipFile.Open(ofd.FileName, ZipArchiveMode.Read);
@@ -102,13 +129,12 @@ namespace XMLSearch
                 Total = double.Parse(xml.Descendants(ns + "total")
                         .Descendants(ns + "ICMSTot")
                         .Elements(ns + "vNF")
-                        .FirstOrDefault().Value,CultureInfo.InvariantCulture),
-
+                        .FirstOrDefault().Value, CultureInfo.InvariantCulture),
                 TotalDesconto = double.Parse(xml.Descendants(ns + "total")
                         .Descendants(ns + "ICMSTot")
                         .Elements(ns + "vDesc")
-                        .FirstOrDefault().Value,CultureInfo.InvariantCulture),
-                ChaveDeAcesso= xml.Descendants(ns + "infProt")
+                        .FirstOrDefault().Value, CultureInfo.InvariantCulture),
+                ChaveDeAcesso = xml.Descendants(ns + "infProt")
                           .Elements(ns + "chNFe")
                           .FirstOrDefault()?.Value,
                 Motivo = xml.Descendants(ns + "infProt")
@@ -117,11 +143,11 @@ namespace XMLSearch
                 Status = int.Parse(xml.Descendants(ns + "infProt")
                          .Elements(ns + "cStat")
                          .FirstOrDefault()?.Value),
-                
+
                 TotalPag = double.Parse(xml.Descendants(ns + "detPag")
                          .Elements(ns + "vPag")
-                         .FirstOrDefault()?.Value,CultureInfo.InvariantCulture),
-                
+                         .FirstOrDefault()?.Value, CultureInfo.InvariantCulture),
+
                 TipoPagamento = int.Parse(xml.Descendants(ns + "detPag")
                          .Elements(ns + "tPag")
                          .FirstOrDefault()?.Value),
@@ -129,8 +155,14 @@ namespace XMLSearch
                 DataHora = DateTime.Parse(xml.Descendants(ns + "ide")
                                 .Elements(ns + "dhEmi")
                                 .FirstOrDefault()?.Value),
-                //TotalTroco = double.Parse(xml.Descendants(ns + "vTroco").FirstOrDefault()?.Value, CultureInfo.InvariantCulture)
+
+                //
             };
+
+            if (xml.Descendants(ns + "vTroco").FirstOrDefault() != null)
+            {
+                nfce.TotalTroco = double.Parse(xml.Descendants(ns + "vTroco").FirstOrDefault()?.Value, CultureInfo.InvariantCulture);
+            }
 
             return nfce;
 
@@ -148,6 +180,29 @@ namespace XMLSearch
 
         public List<XmlNfce> SearchSaltos(List<XmlNfce> list)
         {
+            //long numIni = list.First().NumNfce;
+            //long numFin = list.Last().NumNfce;
+            //long num = numIni;
+            //List<XmlNfce> saltos = new List<XmlNfce>();
+
+            //int count = 0;
+            //while (num != numFin)
+            //{
+            //    if (list[count].NumNfce == num)
+            //    {
+
+            //    }
+            //    else
+            //    {
+            //        saltos.Add(list[count]);
+            //        num += 1;
+            //    }
+            //    num++;
+            //    count++;
+
+            //}
+            //return saltos;
+
             long numIni = list.First().NumNfce;
             long numFin = list.Last().NumNfce;
             long num = numIni;
@@ -163,17 +218,21 @@ namespace XMLSearch
                 else
                 {
                     saltos.Add(list[count]);
-                    num += 1;
+
                 }
                 num++;
                 count++;
 
             }
-
             return saltos;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

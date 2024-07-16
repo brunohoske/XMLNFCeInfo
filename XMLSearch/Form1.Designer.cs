@@ -30,7 +30,6 @@
         {
             fileDialog = new OpenFileDialog();
             btnSelectFiles = new Button();
-            txtNfce = new TextBox();
             panel1 = new Panel();
             txtSaltos = new TextBox();
             label5 = new Label();
@@ -40,8 +39,9 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            flpPanel = new FlowLayoutPanel();
+            gridView = new DataGridView();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             SuspendLayout();
             // 
             // fileDialog
@@ -50,22 +50,13 @@
             // 
             // btnSelectFiles
             // 
-            btnSelectFiles.Location = new Point(35, 68);
+            btnSelectFiles.Location = new Point(12, 22);
             btnSelectFiles.Name = "btnSelectFiles";
             btnSelectFiles.Size = new Size(94, 29);
             btnSelectFiles.TabIndex = 0;
             btnSelectFiles.Text = "Select Files";
             btnSelectFiles.UseVisualStyleBackColor = true;
             btnSelectFiles.Click += btnSelectFiles_Click;
-            // 
-            // txtNfce
-            // 
-            txtNfce.Location = new Point(88, 418);
-            txtNfce.Multiline = true;
-            txtNfce.Name = "txtNfce";
-            txtNfce.Size = new Size(310, 426);
-            txtNfce.TabIndex = 1;
-            txtNfce.TextChanged += textBox1_TextChanged;
             // 
             // panel1
             // 
@@ -155,37 +146,38 @@
             label1.TabIndex = 0;
             label1.Text = "Quant. Saltos:";
             // 
-            // flpPanel
+            // gridView
             // 
-            flpPanel.BorderStyle = BorderStyle.FixedSingle;
-            flpPanel.Location = new Point(213, 30);
-            flpPanel.Name = "flpPanel";
-            flpPanel.Size = new Size(250, 382);
-            flpPanel.TabIndex = 0;
+            gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridView.Location = new Point(102, 55);
+            gridView.Name = "gridView";
+            gridView.RowHeadersWidth = 51;
+            gridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            gridView.Size = new Size(387, 341);
+            gridView.TabIndex = 3;
+            gridView.CellContentClick += gridView_CellContentClick;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(flpPanel);
+            Controls.Add(gridView);
             Controls.Add(panel1);
-            Controls.Add(txtNfce);
             Controls.Add(btnSelectFiles);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private OpenFileDialog fileDialog;
         private Button btnSelectFiles;
-        private TextBox txtNfce;
         private Panel panel1;
         private Label label4;
         private Label label3;
@@ -195,6 +187,6 @@
         private Label lblQuantXml;
         private Label lblQuantSaltos;
         private TextBox txtSaltos;
-        private FlowLayoutPanel flpPanel;
+        private DataGridView gridView;
     }
 }

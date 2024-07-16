@@ -16,11 +16,11 @@ namespace XMLSearch.Models
         public int? QuantItens { get; set; }
         public int? Status { get; set; }
         public string? Motivo { get; set; }
-        public double? Total {  get; set; }
-        public double? TotalItens { get; set; }
-        public double? TotalDesconto { get; set; }
-        public double? TotalPag {  get; set; }
-        public double? TotalTroco { get; set; }
+        public double Total {  get; set; }
+        public double TotalItens { get; set; }
+        public double TotalDesconto { get; set; }
+        public double TotalPag {  get; set; }
+        public double TotalTroco { get; set; }
         public string ChaveDeAcesso { get; set; }
         public long Cupom {  get; set; }
         public int? TipoPagamento { get; set; }
