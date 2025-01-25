@@ -33,3 +33,4 @@ C:\Meus Arquivos\Visual Studio\XMLNFCeInfo\XMLSearch\obj\Debug\net8.0-windows\re
 C:\Meus Arquivos\Visual Studio\XMLNFCeInfo\XMLSearch\obj\Debug\net8.0-windows\XMLSearch.pdb
 C:\Meus Arquivos\Visual Studio\XMLNFCeInfo\XMLSearch\obj\Debug\net8.0-windows\XMLSearch.genruntimeconfig.cache
 C:\Meus Arquivos\Visual Studio\XMLNFCeInfo\XMLSearch\obj\Debug\net8.0-windows\ref\XMLSearch.dll
+C:\Meus Arquivos\Visual Studio\XMLNFCeInfo\XMLSearch\obj\Debug\net8.0-windows\XMLSearch.Views.XMLEdit.resources

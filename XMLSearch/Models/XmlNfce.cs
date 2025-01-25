@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace XMLSearch.Models
 {
     public class XmlNfce
     {
+        public string FileName { get; set; }
+        public XDocument XML = new XDocument();
         public long NumNfce { get; set; }
         public int? Serie { get; set; }
         public string? Cnpj { get; set; }

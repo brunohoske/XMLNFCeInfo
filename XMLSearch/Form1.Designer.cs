@@ -40,6 +40,9 @@
             label2 = new Label();
             label1 = new Label();
             gridView = new DataGridView();
+            btnXmlEdit = new Button();
+            chkSelectAll = new CheckBox();
+            label6 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             SuspendLayout();
@@ -50,7 +53,7 @@
             // 
             // btnSelectFiles
             // 
-            btnSelectFiles.Location = new Point(12, 22);
+            btnSelectFiles.Location = new Point(2, 22);
             btnSelectFiles.Name = "btnSelectFiles";
             btnSelectFiles.Size = new Size(94, 29);
             btnSelectFiles.TabIndex = 0;
@@ -69,7 +72,7 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(516, 55);
+            panel1.Location = new Point(600, 55);
             panel1.Name = "panel1";
             panel1.Size = new Size(250, 341);
             panel1.TabIndex = 2;
@@ -153,18 +156,54 @@
             gridView.Name = "gridView";
             gridView.RowHeadersWidth = 51;
             gridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            gridView.Size = new Size(387, 341);
+            gridView.Size = new Size(466, 341);
             gridView.TabIndex = 3;
             gridView.CellContentClick += gridView_CellContentClick;
+            // 
+            // btnXmlEdit
+            // 
+            btnXmlEdit.Location = new Point(2, 119);
+            btnXmlEdit.Name = "btnXmlEdit";
+            btnXmlEdit.Size = new Size(94, 29);
+            btnXmlEdit.TabIndex = 4;
+            btnXmlEdit.Text = "Editar XML";
+            btnXmlEdit.UseVisualStyleBackColor = true;
+            btnXmlEdit.Click += btnXmlEdit_Click;
+            // 
+            // chkSelectAll
+            // 
+            chkSelectAll.AutoSize = true;
+            chkSelectAll.Location = new Point(112, 25);
+            chkSelectAll.Name = "chkSelectAll";
+            chkSelectAll.Size = new Size(142, 24);
+            chkSelectAll.TabIndex = 5;
+            chkSelectAll.Text = "Selecionar todos";
+            chkSelectAll.UseVisualStyleBackColor = true;
+            chkSelectAll.CheckedChanged += chkSelectAll_CheckedChanged;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 6F);
+            label6.Location = new Point(817, 429);
+            label6.Name = "label6";
+            label6.Size = new Size(62, 12);
+            label6.TabIndex = 6;
+            label6.Text = "Bruno Hoske";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(881, 450);
+            Controls.Add(label6);
+            Controls.Add(chkSelectAll);
+            Controls.Add(btnXmlEdit);
             Controls.Add(gridView);
             Controls.Add(panel1);
             Controls.Add(btnSelectFiles);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -172,6 +211,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -188,5 +228,8 @@
         private Label lblQuantSaltos;
         private TextBox txtSaltos;
         private DataGridView gridView;
+        private Button btnXmlEdit;
+        private CheckBox chkSelectAll;
+        private Label label6;
     }
 }
