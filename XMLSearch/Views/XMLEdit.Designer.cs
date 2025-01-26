@@ -43,16 +43,18 @@
             // 
             // txtEdit
             // 
-            txtEdit.Location = new Point(12, 63);
+            txtEdit.Location = new Point(10, 47);
+            txtEdit.Margin = new Padding(3, 2, 3, 2);
             txtEdit.Name = "txtEdit";
-            txtEdit.Size = new Size(125, 27);
+            txtEdit.Size = new Size(110, 23);
             txtEdit.TabIndex = 0;
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(28, 119);
+            btnEdit.Location = new Point(24, 89);
+            btnEdit.Margin = new Padding(3, 2, 3, 2);
             btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(94, 29);
+            btnEdit.Size = new Size(82, 22);
             btnEdit.TabIndex = 1;
             btnEdit.Text = "Editar";
             btnEdit.UseVisualStyleBackColor = true;
@@ -61,9 +63,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(-1, 19);
+            label1.Location = new Point(-1, 14);
             label1.Name = "label1";
-            label1.Size = new Size(249, 20);
+            label1.Size = new Size(194, 15);
             label1.TabIndex = 2;
             label1.Text = "Digite o nome da chave para alterar";
             // 
@@ -71,33 +73,36 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Alterar Valor", "Apagar tag" });
-            comboBox1.Location = new Point(155, 63);
+            comboBox1.Location = new Point(136, 47);
+            comboBox1.Margin = new Padding(3, 2, 3, 2);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
+            comboBox1.Size = new Size(133, 23);
             comboBox1.TabIndex = 3;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // txtNewValue
             // 
-            txtNewValue.Location = new Point(170, 121);
+            txtNewValue.Location = new Point(149, 91);
+            txtNewValue.Margin = new Padding(3, 2, 3, 2);
             txtNewValue.Name = "txtNewValue";
-            txtNewValue.Size = new Size(125, 27);
+            txtNewValue.Size = new Size(110, 23);
             txtNewValue.TabIndex = 4;
             // 
             // lblNewValue
             // 
             lblNewValue.AutoSize = true;
-            lblNewValue.Location = new Point(182, 98);
+            lblNewValue.Location = new Point(159, 74);
             lblNewValue.Name = "lblNewValue";
-            lblNewValue.Size = new Size(85, 20);
+            lblNewValue.Size = new Size(68, 15);
             lblNewValue.TabIndex = 5;
             lblNewValue.Text = "Novo valor:";
             // 
             // btnExport
             // 
-            btnExport.Location = new Point(212, 278);
+            btnExport.Location = new Point(186, 208);
+            btnExport.Margin = new Padding(3, 2, 3, 2);
             btnExport.Name = "btnExport";
-            btnExport.Size = new Size(94, 29);
+            btnExport.Size = new Size(82, 22);
             btnExport.TabIndex = 6;
             btnExport.Text = "Exportar";
             btnExport.UseVisualStyleBackColor = true;
@@ -106,26 +111,27 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(11, 287);
+            label2.Location = new Point(10, 215);
             label2.Name = "label2";
-            label2.Size = new Size(94, 20);
+            label2.Size = new Size(78, 15);
             label2.TabIndex = 7;
             label2.Text = "Quant. XMLs:";
             // 
             // lblQuant
             // 
             lblQuant.AutoSize = true;
-            lblQuant.Location = new Point(109, 287);
+            lblQuant.Location = new Point(95, 215);
             lblQuant.Name = "lblQuant";
-            lblQuant.Size = new Size(50, 20);
+            lblQuant.Size = new Size(38, 15);
             lblQuant.TabIndex = 8;
             lblQuant.Text = "label3";
             // 
             // btnICMS
             // 
-            btnICMS.Location = new Point(28, 172);
+            btnICMS.Location = new Point(24, 129);
+            btnICMS.Margin = new Padding(3, 2, 3, 2);
             btnICMS.Name = "btnICMS";
-            btnICMS.Size = new Size(170, 29);
+            btnICMS.Size = new Size(149, 22);
             btnICMS.TabIndex = 9;
             btnICMS.Text = "Corrigir ICMS Deson";
             btnICMS.UseVisualStyleBackColor = true;
@@ -133,9 +139,10 @@
             // 
             // btnSignature
             // 
-            btnSignature.Location = new Point(38, 225);
+            btnSignature.Location = new Point(33, 169);
+            btnSignature.Margin = new Padding(3, 2, 3, 2);
             btnSignature.Name = "btnSignature";
-            btnSignature.Size = new Size(94, 29);
+            btnSignature.Size = new Size(82, 22);
             btnSignature.TabIndex = 10;
             btnSignature.Text = "Assinar XMLs";
             btnSignature.UseVisualStyleBackColor = true;
@@ -143,9 +150,9 @@
             // 
             // XMLEdit
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(345, 321);
+            ClientSize = new Size(302, 241);
             Controls.Add(btnSignature);
             Controls.Add(btnICMS);
             Controls.Add(lblQuant);
@@ -157,6 +164,8 @@
             Controls.Add(label1);
             Controls.Add(btnEdit);
             Controls.Add(txtEdit);
+            Margin = new Padding(3, 2, 3, 2);
+            MaximizeBox = false;
             Name = "XMLEdit";
             Text = "XMLEdit";
             Load += XMLEdit_Load;

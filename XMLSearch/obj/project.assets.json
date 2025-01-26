@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Meus Arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj",
+      "projectUniqueName": "D:\\Meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj",
       "projectName": "XMLSearch",
-      "projectPath": "C:\\Meus Arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj",
+      "projectPath": "D:\\Meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj",
       "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-      "outputPath": "C:\\Meus Arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\obj\\",
+      "outputPath": "D:\\Meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

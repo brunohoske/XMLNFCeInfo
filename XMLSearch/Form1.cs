@@ -17,59 +17,78 @@ namespace XMLSearch
             txtSaltos.WordWrap = true;
             txtSaltos.ReadOnly = true;
 
+            gridView.AllowUserToAddRows = false;
+            gridView.AllowUserToDeleteRows = false;
+            gridView.ShowEditingIcon = false;
+            gridView.ReadOnly = false;
+            gridView.MultiSelect = false;
+
         }
 
         private async void btnSelectFiles_Click(object sender, EventArgs e)
         {
 
             NfceList = await GetNFCes();
-            var saltos = new List<XmlNfce>();
-            //saltos = SearchSaltos(NfceList);
-            gridView.SuspendLayout();
-            gridView.Rows.Clear();
-
-            DataGridViewCheckBoxColumn chkColumn = new DataGridViewCheckBoxColumn();
-            chkColumn.Name = "chkColumn";
-            chkColumn.HeaderText = "Selecionar";
-            chkColumn.ValueType = typeof(bool);
-            gridView.Columns.Add(chkColumn);
-
-            gridView.Columns.Add(new DataGridViewButtonColumn() { Name = "Visualizar", UseColumnTextForButtonValue = true, HeaderText = "Visualizar", Text = "Visualizar" });
-            gridView.Columns.Add("XML", "XML");
-            gridView.Columns.Add("Série", "Série");
-            gridView.Columns[0].Width = gridView.Columns[0].Width / 2 + 40;
-            gridView.Columns[2].Width = gridView.Columns[2].Width / 2 + 24;
-
-
-            gridView.CellClick += (sender, e) =>
+            if(NfceList.Count <= 0 || NfceList == null)
             {
-                if (e.ColumnIndex == 1)
+                MessageBox.Show("Nenhum arquivo selecionado");
+            }
+            else
+            {
+                var saltos = new List<XmlNfce>();
+                //saltos = SearchSaltos(NfceList);
+                gridView.SuspendLayout();
+                gridView.Rows.Clear();
+                gridView.Columns.Clear();
+
+
+
+
+                DataGridViewCheckBoxColumn chkColumn = new DataGridViewCheckBoxColumn();
+                chkColumn.Name = "chkColumn";
+                chkColumn.HeaderText = "Selecionar";
+                chkColumn.ValueType = typeof(bool);
+                gridView.Columns.Add(chkColumn);
+
+                gridView.Columns.Add(new DataGridViewButtonColumn() { Name = "Visualizar", UseColumnTextForButtonValue = true, HeaderText = "Visualizar", Text = "Visualizar" });
+                gridView.Columns.Add("XML", "XML");
+                gridView.Columns.Add("Série", "Série");
+                gridView.Columns[0].Width = gridView.Columns[0].Width / 2 + 40;
+                gridView.Columns[2].Width = gridView.Columns[2].Width / 2 + 24;
+
+                gridView.Columns[1].ReadOnly = true;
+                gridView.Columns[2].ReadOnly = true;
+                gridView.Columns[3].ReadOnly = true;
+
+
+                gridView.CellClick += (sender, e) =>
                 {
-                    XMLView xMLView = new XMLView(NfceList[e.RowIndex]); xMLView.Show();
+                    if (e.ColumnIndex == 1)
+                    {
+                        XMLView xMLView = new XMLView(NfceList[e.RowIndex]); xMLView.Show();
+                    }
+                };
+                int index = 0;
+                foreach (var nfce in NfceList)
+                {
+
+                    Button button = new Button() { Text = "Visualizar", AutoSize = true };
+                    button.Click += (sender, e) => { XMLView xMLView = new XMLView(nfce); xMLView.Show(); };
+                    button.Name = "Visualizar";
+
+                    gridView.Rows.Add(false, button, nfce.NumNfce.ToString(), nfce.Serie.ToString());
+                    index++;
+
                 }
-            };
-            int index = 0;
-            foreach (var nfce in NfceList)
-            {
-
-                Button button = new Button() { Text = "Visualizar", AutoSize = true };
-                button.Click += (sender, e) => { XMLView xMLView = new XMLView(nfce); xMLView.Show(); };
-                button.Name = "Visualizar";
-
-                gridView.Rows.Add(false, button, nfce.NumNfce.ToString(), nfce.Serie.ToString());
-
-
-                index++;
-
-
+                foreach (var salto in saltos)
+                {
+                    txtSaltos.Text += salto.ToString();
+                }
+                lblQuantXml.Text = NfceList.Count.ToString();
+                lblQuantSaltos.Text = saltos.Count.ToString();
+                gridView.ResumeLayout();
             }
-            foreach (var salto in saltos)
-            {
-                txtSaltos.Text += salto.ToString();
-            }
-            lblQuantXml.Text = NfceList.Count.ToString();
-            lblQuantSaltos.Text = saltos.Count.ToString();
-            gridView.ResumeLayout();
+           
 
         }
 
@@ -77,26 +96,38 @@ namespace XMLSearch
         {
             using OpenFileDialog ofd = new OpenFileDialog();
             ofd.Multiselect = false;
-
+            //ofd.Filter = "Arquivos Zip (*.zip)|*.zip";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 var fileStream = ofd.OpenFile();
                 return await UploadXMLs(ofd);
             }
-            return null;
+       
+            return new List<XmlNfce>();
+            
         }
 
         private async Task<List<XmlNfce>> UploadXMLs(OpenFileDialog ofd)
         {
             List<XmlNfce> nfces = new List<XmlNfce>();
-            using ZipArchive zip = ZipFile.Open(ofd.FileName, ZipArchiveMode.Read);
-            foreach (ZipArchiveEntry entry in zip.Entries)
+            try
             {
-                using Stream stream = entry.Open();
-
-                nfces.Add(GetInfos(stream, entry.Name));
+                using ZipArchive zip = ZipFile.Open(ofd.FileName, ZipArchiveMode.Read);
+                foreach (ZipArchiveEntry entry in zip.Entries)
+                {
+                    if (entry.FullName.EndsWith(".xml", StringComparison.OrdinalIgnoreCase))
+                    {
+                        using Stream stream = entry.Open();
+                        nfces.Add(GetInfos(stream, entry.Name));
+                    }
+                }
+                return nfces;
             }
-            return nfces;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao ler os arquivos\n" + ex.Message+ "\n\n Certifique-se de que o arquivo é .zip, ao invés de .7z,.rar,etc");
+                return new List<XmlNfce>();
+            }
         }
 
         private XmlNfce GetInfos(Stream stream, string fileName)
@@ -259,6 +290,7 @@ namespace XMLSearch
             }
             XMLEdit form = new XMLEdit(list);
             form.Show();
+            
         }
 
         private void chkSelectAll_CheckedChanged(object sender, EventArgs e)

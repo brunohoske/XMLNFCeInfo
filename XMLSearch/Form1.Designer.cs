@@ -32,17 +32,16 @@
             btnSelectFiles = new Button();
             panel1 = new Panel();
             txtSaltos = new TextBox();
-            label5 = new Label();
-            lblQuantXml = new Label();
             lblQuantSaltos = new Label();
-            label4 = new Label();
-            label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            lblQuantXml = new Label();
+            label3 = new Label();
             gridView = new DataGridView();
             btnXmlEdit = new Button();
             chkSelectAll = new CheckBox();
             label6 = new Label();
+            label7 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             SuspendLayout();
@@ -53,9 +52,10 @@
             // 
             // btnSelectFiles
             // 
-            btnSelectFiles.Location = new Point(2, 22);
+            btnSelectFiles.Location = new Point(2, 16);
+            btnSelectFiles.Margin = new Padding(3, 2, 3, 2);
             btnSelectFiles.Name = "btnSelectFiles";
-            btnSelectFiles.Size = new Size(94, 29);
+            btnSelectFiles.Size = new Size(82, 22);
             btnSelectFiles.TabIndex = 0;
             btnSelectFiles.Text = "Select Files";
             btnSelectFiles.UseVisualStyleBackColor = true;
@@ -65,106 +65,88 @@
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(txtSaltos);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(lblQuantXml);
             panel1.Controls.Add(lblQuantSaltos);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(600, 55);
+            panel1.Location = new Point(525, 41);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(250, 341);
+            panel1.Size = new Size(219, 256);
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
             // 
             // txtSaltos
             // 
-            txtSaltos.Location = new Point(45, 95);
+            txtSaltos.Location = new Point(39, 71);
+            txtSaltos.Margin = new Padding(3, 2, 3, 2);
             txtSaltos.Multiline = true;
             txtSaltos.Name = "txtSaltos";
-            txtSaltos.Size = new Size(125, 98);
+            txtSaltos.Size = new Size(110, 74);
             txtSaltos.TabIndex = 8;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(90, 253);
-            label5.Name = "label5";
-            label5.Size = new Size(50, 20);
-            label5.TabIndex = 7;
-            label5.Text = "label5";
-            // 
-            // lblQuantXml
-            // 
-            lblQuantXml.AutoSize = true;
-            lblQuantXml.Location = new Point(118, 216);
-            lblQuantXml.Name = "lblQuantXml";
-            lblQuantXml.Size = new Size(50, 20);
-            lblQuantXml.TabIndex = 6;
-            lblQuantXml.Text = "label5";
             // 
             // lblQuantSaltos
             // 
             lblQuantSaltos.AutoSize = true;
-            lblQuantSaltos.Location = new Point(120, 18);
+            lblQuantSaltos.Location = new Point(105, 14);
             lblQuantSaltos.Name = "lblQuantSaltos";
-            lblQuantSaltos.Size = new Size(50, 20);
+            lblQuantSaltos.Size = new Size(38, 15);
             lblQuantSaltos.TabIndex = 5;
             lblQuantSaltos.Text = "label5";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(17, 253);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 20);
-            label4.TabIndex = 3;
-            label4.Text = "label4";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(13, 216);
-            label3.Name = "label3";
-            label3.Size = new Size(88, 20);
-            label3.TabIndex = 2;
-            label3.Text = "Quant. XML:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(15, 72);
+            label2.Location = new Point(13, 54);
             label2.Name = "label2";
-            label2.Size = new Size(52, 20);
+            label2.Size = new Size(41, 15);
             label2.TabIndex = 1;
             label2.Text = "Saltos:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(15, 18);
+            label1.Location = new Point(13, 14);
             label1.Name = "label1";
-            label1.Size = new Size(99, 20);
+            label1.Size = new Size(80, 15);
             label1.TabIndex = 0;
             label1.Text = "Quant. Saltos:";
+            // 
+            // lblQuantXml
+            // 
+            lblQuantXml.AutoSize = true;
+            lblQuantXml.Location = new Point(446, 20);
+            lblQuantXml.Name = "lblQuantXml";
+            lblQuantXml.Size = new Size(13, 15);
+            lblQuantXml.TabIndex = 6;
+            lblQuantXml.Text = "0";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(367, 20);
+            label3.Name = "label3";
+            label3.Size = new Size(73, 15);
+            label3.TabIndex = 2;
+            label3.Text = "Quant. XML:";
             // 
             // gridView
             // 
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Location = new Point(102, 55);
+            gridView.Location = new Point(89, 41);
+            gridView.Margin = new Padding(3, 2, 3, 2);
             gridView.Name = "gridView";
             gridView.RowHeadersWidth = 51;
             gridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            gridView.Size = new Size(466, 341);
+            gridView.Size = new Size(408, 256);
             gridView.TabIndex = 3;
             gridView.CellContentClick += gridView_CellContentClick;
             // 
             // btnXmlEdit
             // 
-            btnXmlEdit.Location = new Point(2, 119);
+            btnXmlEdit.Location = new Point(2, 89);
+            btnXmlEdit.Margin = new Padding(3, 2, 3, 2);
             btnXmlEdit.Name = "btnXmlEdit";
-            btnXmlEdit.Size = new Size(94, 29);
+            btnXmlEdit.Size = new Size(82, 22);
             btnXmlEdit.TabIndex = 4;
             btnXmlEdit.Text = "Editar XML";
             btnXmlEdit.UseVisualStyleBackColor = true;
@@ -173,9 +155,10 @@
             // chkSelectAll
             // 
             chkSelectAll.AutoSize = true;
-            chkSelectAll.Location = new Point(112, 25);
+            chkSelectAll.Location = new Point(98, 19);
+            chkSelectAll.Margin = new Padding(3, 2, 3, 2);
             chkSelectAll.Name = "chkSelectAll";
-            chkSelectAll.Size = new Size(142, 24);
+            chkSelectAll.Size = new Size(113, 19);
             chkSelectAll.TabIndex = 5;
             chkSelectAll.Text = "Selecionar todos";
             chkSelectAll.UseVisualStyleBackColor = true;
@@ -185,24 +168,37 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 6F);
-            label6.Location = new Point(817, 429);
+            label6.Location = new Point(715, 322);
             label6.Name = "label6";
-            label6.Size = new Size(62, 12);
+            label6.Size = new Size(52, 11);
             label6.TabIndex = 6;
             label6.Text = "Bruno Hoske";
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(565, 24);
+            label7.Name = "label7";
+            label7.Size = new Size(149, 15);
+            label7.TabIndex = 7;
+            label7.Text = "Painel de Saltos (Em breve)";
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(881, 450);
+            ClientSize = new Size(771, 338);
+            Controls.Add(label7);
             Controls.Add(label6);
+            Controls.Add(lblQuantXml);
             Controls.Add(chkSelectAll);
             Controls.Add(btnXmlEdit);
             Controls.Add(gridView);
+            Controls.Add(label3);
             Controls.Add(panel1);
             Controls.Add(btnSelectFiles);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "Form1";
             Text = "Form1";
@@ -219,11 +215,9 @@
         private OpenFileDialog fileDialog;
         private Button btnSelectFiles;
         private Panel panel1;
-        private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
-        private Label label5;
         private Label lblQuantXml;
         private Label lblQuantSaltos;
         private TextBox txtSaltos;
@@ -231,5 +225,6 @@
         private Button btnXmlEdit;
         private CheckBox chkSelectAll;
         private Label label6;
+        private Label label7;
     }
 }

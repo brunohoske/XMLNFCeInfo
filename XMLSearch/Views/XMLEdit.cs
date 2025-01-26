@@ -17,42 +17,67 @@ namespace XMLSearch.Views
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            int count = 0;
+            int erros = 0;
             string tag = txtEdit.Text;
             try
             {
 
                 foreach (var xml in NfceList)
                 {
-                    if (comboBox1.SelectedIndex == 0)
+                    try
                     {
-                        xml.XML.Descendants()
-                       .Where(e => e.Name.LocalName == tag)
-                       .FirstOrDefault().Value = txtNewValue.Text;
-                    }
-                    if (comboBox1.SelectedIndex == 1)
-                    {
-                        xml.XML.Descendants()
-                        .Where(e => e.Name.LocalName == tag)
-                        .Remove();
-                    }
+                        if (comboBox1.SelectedIndex == 0)
+                        {
+                            var element = xml.XML.Descendants()
+                           .Where(e => e.Name.LocalName == tag);
 
+                            if (element == null || element.Count() <= 0)
+                            {
+                                erros++;
+                                continue;
+                            }
+                            else
+                            {
+                                element.First().Value = txtNewValue.Text;
+                                count++;
+                            }
+                        }
+                        if (comboBox1.SelectedIndex == 1)
+                        {
+                            var element = xml.XML.Descendants()
+                            .Where(e => e.Name.LocalName == tag);
+
+                            if(element == null || element.Count() <= 0)
+                            {
+                                erros++;
+                                continue;
+                            }
+                            else
+                            {
+                                element.Remove();
+                                count++;
+                            }
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        erros++;
+                        continue;
+                    }
                 }
+                MessageBox.Show("Processo concluído\n"+ "Corrigidos: " + count + " Falhas: " + erros);
             }
             catch (Exception ex)
             {
                 throw;
             }
-
-
         }
 
         private void XMLEdit_Load(object sender, EventArgs e)
         {
-
             lblQuant.Text = NfceList.Count.ToString();
-
         }
-
         private void btnExport_Click(object sender, EventArgs e)
         {
             try
