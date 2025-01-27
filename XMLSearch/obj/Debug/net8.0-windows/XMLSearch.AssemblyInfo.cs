@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("XMLSearch")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45d88d990b886e1dde02d1f0cff50bea5ae843f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e829fc369315466761477533b396fac24046e39")]
 [assembly: System.Reflection.AssemblyProductAttribute("XMLSearch")]
 [assembly: System.Reflection.AssemblyTitleAttribute("XMLSearch")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

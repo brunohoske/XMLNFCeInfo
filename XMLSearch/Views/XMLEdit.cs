@@ -13,6 +13,7 @@ namespace XMLSearch.Views
         {
             InitializeComponent();
             NfceList = list;
+            btnSignature.Visible = false;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

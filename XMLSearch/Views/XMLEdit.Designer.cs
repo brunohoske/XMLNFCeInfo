@@ -167,7 +167,7 @@
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "XMLEdit";
-            Text = "XMLEdit";
+            Text = "Editar";
             Load += XMLEdit_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -33,20 +33,22 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Location = new Point(12, 12);
+            flowLayoutPanel1.Location = new Point(10, 9);
+            flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(271, 426);
+            flowLayoutPanel1.Size = new Size(237, 320);
             flowLayoutPanel1.TabIndex = 0;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // XMLView
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(309, 450);
+            ClientSize = new Size(270, 338);
             Controls.Add(flowLayoutPanel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "XMLView";
-            Text = "XMLView";
+            Text = "Visualizar";
             Load += XMLView_Load;
             ResumeLayout(false);
         }

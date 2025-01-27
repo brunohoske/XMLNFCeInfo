@@ -114,7 +114,7 @@
             // lblQuantXml
             // 
             lblQuantXml.AutoSize = true;
-            lblQuantXml.Location = new Point(446, 20);
+            lblQuantXml.Location = new Point(446, 24);
             lblQuantXml.Name = "lblQuantXml";
             lblQuantXml.Size = new Size(13, 15);
             lblQuantXml.TabIndex = 6;
@@ -123,7 +123,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(367, 20);
+            label3.Location = new Point(367, 24);
             label3.Name = "label3";
             label3.Size = new Size(73, 15);
             label3.TabIndex = 2;
@@ -201,7 +201,7 @@
             Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "Form1";
-            Text = "Form1";
+            Text = "Painel";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
