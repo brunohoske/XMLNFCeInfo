@@ -78,7 +78,7 @@
             // 
             // txtSaltos
             // 
-            txtSaltos.Location = new Point(39, 71);
+            txtSaltos.Location = new Point(29, 71);
             txtSaltos.Margin = new Padding(3, 2, 3, 2);
             txtSaltos.Multiline = true;
             txtSaltos.Name = "txtSaltos";
@@ -115,7 +115,7 @@
             // lblQuantXml
             // 
             lblQuantXml.AutoSize = true;
-            lblQuantXml.Location = new Point(529, 22);
+            lblQuantXml.Location = new Point(533, 22);
             lblQuantXml.Name = "lblQuantXml";
             lblQuantXml.Size = new Size(13, 15);
             lblQuantXml.TabIndex = 6;
@@ -124,7 +124,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(439, 22);
+            label3.Location = new Point(443, 22);
             label3.Name = "label3";
             label3.Size = new Size(84, 15);
             label3.TabIndex = 2;
@@ -138,7 +138,7 @@
             gridView.Name = "gridView";
             gridView.RowHeadersWidth = 51;
             gridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            gridView.Size = new Size(455, 256);
+            gridView.Size = new Size(417, 256);
             gridView.TabIndex = 3;
             gridView.CellContentClick += gridView_CellContentClick;
             // 

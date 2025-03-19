@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj": {}
+    "D:\\Meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj": {}
   },
   "projects": {
-    "D:\\meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj": {
+    "D:\\Meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj",
+        "projectUniqueName": "D:\\Meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj",
         "projectName": "XMLSearch",
-        "projectPath": "D:\\meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj",
+        "projectPath": "D:\\Meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj",
         "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
         "outputPath": "D:\\meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\obj\\",
         "projectStyle": "PackageReference",

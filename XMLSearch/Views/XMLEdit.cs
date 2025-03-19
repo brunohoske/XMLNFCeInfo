@@ -49,7 +49,7 @@ namespace XMLSearch.Views
                             var element = xml.XML.Descendants()
                             .Where(e => e.Name.LocalName == tag);
 
-                            if(element == null || element.Count() <= 0)
+                            if (element == null || element.Count() <= 0)
                             {
                                 erros++;
                                 continue;
@@ -61,13 +61,13 @@ namespace XMLSearch.Views
                             }
                         }
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         erros++;
                         continue;
                     }
                 }
-                MessageBox.Show("Processo concluído\n"+ "Corrigidos: " + count + " Falhas: " + erros);
+                MessageBox.Show("Processo concluído\n" + "Corrigidos: " + count + " Falhas: " + erros);
             }
             catch (Exception ex)
             {
@@ -87,7 +87,7 @@ namespace XMLSearch.Views
                 dialog.ShowDialog();
                 foreach (var xml in NfceList)
                 {
-                    
+
                     string fullPath = Path.Combine(dialog.SelectedPath, xml.FileName);
                     string xmlContent = xml.XML.ToString(SaveOptions.DisableFormatting);
                     File.WriteAllText(fullPath, xmlContent);
@@ -164,13 +164,13 @@ namespace XMLSearch.Views
                         if (!string.IsNullOrEmpty(idValue))
                         {
                             chvNfe = idValue.Substring(3);
-                           
+
                         }
                     }
-                    
+
                     if (infNFeElement != null)
                     {
-                        
+
                         infNFeElement.AddAfterSelf(
                             new XElement("infNFeSupl",
                                 new XElement("qrCode", new XCData($"http://app.sefaz.es.gov.br/ConsultaNFCe?p={chvNfe}|2|1|1|C5CB4D07E2A869BDE41F7C7A2AB72C8AE357769D")),
@@ -205,42 +205,42 @@ namespace XMLSearch.Views
                             )
                         );
 
-                  
+
                     }
 
-                      var protNFe = new XElement("protNFe",
-                      new XAttribute("versao", "4.00"),
-                      new XElement("infProt",
-                      new XAttribute("Id", "NFe332240110314065"),
-                      new XElement("tpAmb", "1"),
-                      new XElement("verAplic", "SVRSnfce202401291642"),
-                      new XElement("chNFe", $"{chvNfe}"),
-                      new XElement("dhRecbto", "2024-03-01T07:19:55-03:00"),
-                      new XElement("nProt", "332240110314065"),
-                      new XElement("digVal", "rzcvfjnnA4PTa732GQ8kesMEZEE="),
-                      new XElement("cStat", "100"),
-                      new XElement("xMotivo", "Autorizado o uso da NF-e")
-                   ));
-                    
+                    var protNFe = new XElement("protNFe",
+                    new XAttribute("versao", "4.00"),
+                    new XElement("infProt",
+                    new XAttribute("Id", "NFe332240110314065"),
+                    new XElement("tpAmb", "1"),
+                    new XElement("verAplic", "SVRSnfce202401291642"),
+                    new XElement("chNFe", $"{chvNfe}"),
+                    new XElement("dhRecbto", "2024-03-01T07:19:55-03:00"),
+                    new XElement("nProt", "332240110314065"),
+                    new XElement("digVal", "rzcvfjnnA4PTa732GQ8kesMEZEE="),
+                    new XElement("cStat", "100"),
+                    new XElement("xMotivo", "Autorizado o uso da NF-e")
+                 ));
+
 
                     if (xml.XML.Root.Name.LocalName != "nfeProc")
                     {
-                        
+
                         var nfeProc = new XElement(
                             XName.Get("nfeProc", "http://www.portalfiscal.inf.br/nfe"),
                             new XAttribute("versao", "4.00"),
-                            xml.XML.Root 
+                            xml.XML.Root
                         );
 
-                        
+
                         xml.XML = new XDocument(nfeProc);
                     }
                     var nfeElement = xml.XML.Root.Element("NFe");
                     if (nfeElement != null)
                     {
-                        
+
                         nfeElement.AddAfterSelf(protNFe);
-                        
+
 
                     }
                     //XNamespace novoNamespace = "http://www.w3.org/2000/09/xmldsig#"; // Defina o novo namespace
@@ -266,7 +266,7 @@ namespace XMLSearch.Views
                         element.Name = namespacePai + element.Name.LocalName;
                     }
 
-                    
+
                 }
 
                 MessageBox.Show("Todos os XMLs assinados");
@@ -276,8 +276,12 @@ namespace XMLSearch.Views
                 MessageBox.Show("Nem todos os XMLs foram assinados. Erro ocorrido");
             }
 
-            
+
         }
-        
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
