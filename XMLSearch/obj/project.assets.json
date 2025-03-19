@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj",
+      "projectUniqueName": "D:\\meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj",
       "projectName": "XMLSearch",
-      "projectPath": "D:\\Meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj",
+      "projectPath": "D:\\meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\XMLSearch.csproj",
       "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-      "outputPath": "D:\\Meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\obj\\",
+      "outputPath": "D:\\meus arquivos\\Visual Studio\\XMLNFCeInfo\\XMLSearch\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,7 +51,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -75,7 +76,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

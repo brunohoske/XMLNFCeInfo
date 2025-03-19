@@ -42,6 +42,7 @@
             chkSelectAll = new CheckBox();
             label6 = new Label();
             label7 = new Label();
+            label4 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gridView).BeginInit();
             SuspendLayout();
@@ -52,12 +53,12 @@
             // 
             // btnSelectFiles
             // 
-            btnSelectFiles.Location = new Point(2, 16);
+            btnSelectFiles.Location = new Point(3, 18);
             btnSelectFiles.Margin = new Padding(3, 2, 3, 2);
             btnSelectFiles.Name = "btnSelectFiles";
-            btnSelectFiles.Size = new Size(82, 22);
+            btnSelectFiles.Size = new Size(107, 22);
             btnSelectFiles.TabIndex = 0;
-            btnSelectFiles.Text = "Select Files";
+            btnSelectFiles.Text = "Upload XML's";
             btnSelectFiles.UseVisualStyleBackColor = true;
             btnSelectFiles.Click += btnSelectFiles_Click;
             // 
@@ -68,10 +69,10 @@
             panel1.Controls.Add(lblQuantSaltos);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(525, 41);
+            panel1.Location = new Point(613, 39);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(219, 256);
+            panel1.Size = new Size(158, 256);
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
             // 
@@ -89,9 +90,9 @@
             lblQuantSaltos.AutoSize = true;
             lblQuantSaltos.Location = new Point(105, 14);
             lblQuantSaltos.Name = "lblQuantSaltos";
-            lblQuantSaltos.Size = new Size(38, 15);
+            lblQuantSaltos.Size = new Size(16, 15);
             lblQuantSaltos.TabIndex = 5;
-            lblQuantSaltos.Text = "label5";
+            lblQuantSaltos.Text = "...";
             // 
             // label2
             // 
@@ -114,7 +115,7 @@
             // lblQuantXml
             // 
             lblQuantXml.AutoSize = true;
-            lblQuantXml.Location = new Point(446, 24);
+            lblQuantXml.Location = new Point(529, 22);
             lblQuantXml.Name = "lblQuantXml";
             lblQuantXml.Size = new Size(13, 15);
             lblQuantXml.TabIndex = 6;
@@ -123,27 +124,27 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(367, 24);
+            label3.Location = new Point(439, 22);
             label3.Name = "label3";
-            label3.Size = new Size(73, 15);
+            label3.Size = new Size(84, 15);
             label3.TabIndex = 2;
-            label3.Text = "Quant. XML:";
+            label3.Text = "Quant. XML's :";
             // 
             // gridView
             // 
             gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridView.Location = new Point(89, 41);
+            gridView.Location = new Point(129, 39);
             gridView.Margin = new Padding(3, 2, 3, 2);
             gridView.Name = "gridView";
             gridView.RowHeadersWidth = 51;
             gridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
-            gridView.Size = new Size(408, 256);
+            gridView.Size = new Size(455, 256);
             gridView.TabIndex = 3;
             gridView.CellContentClick += gridView_CellContentClick;
             // 
             // btnXmlEdit
             // 
-            btnXmlEdit.Location = new Point(2, 89);
+            btnXmlEdit.Location = new Point(3, 87);
             btnXmlEdit.Margin = new Padding(3, 2, 3, 2);
             btnXmlEdit.Name = "btnXmlEdit";
             btnXmlEdit.Size = new Size(82, 22);
@@ -155,7 +156,7 @@
             // chkSelectAll
             // 
             chkSelectAll.AutoSize = true;
-            chkSelectAll.Location = new Point(98, 19);
+            chkSelectAll.Location = new Point(129, 16);
             chkSelectAll.Margin = new Padding(3, 2, 3, 2);
             chkSelectAll.Name = "chkSelectAll";
             chkSelectAll.Size = new Size(113, 19);
@@ -168,7 +169,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 6F);
-            label6.Location = new Point(715, 322);
+            label6.Location = new Point(719, 330);
             label6.Name = "label6";
             label6.Size = new Size(52, 11);
             label6.TabIndex = 6;
@@ -177,17 +178,28 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(565, 24);
+            label7.Location = new Point(592, 22);
             label7.Name = "label7";
             label7.Size = new Size(149, 15);
             label7.TabIndex = 7;
             label7.Text = "Painel de Saltos (Em breve)";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 7F);
+            label4.Location = new Point(24, 42);
+            label4.Name = "label4";
+            label4.Size = new Size(86, 12);
+            label4.TabIndex = 8;
+            label4.Text = "Envie arquivos .zip";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(771, 338);
+            ClientSize = new Size(779, 350);
+            Controls.Add(label4);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(lblQuantXml);
@@ -226,5 +238,6 @@
         private CheckBox chkSelectAll;
         private Label label6;
         private Label label7;
+        private Label label4;
     }
 }
